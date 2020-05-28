@@ -1,10 +1,50 @@
 $pressStart2P: 'Press Start 2P', 'Consolas', sans-serif;
+$openSans: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+$roboto: 'Roboto Slab', 'Consolas', sans-serif;
+
+html {
+  font-size: 62.5%;
+}
 
 body {
-  font-family: $pressStart2P;
-  color: #fff;
+  color: $mainText;
+  font-size: 1.6rem;
+  font-family: $openSans;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $primary;
 }
 
 h1 {
+  font-family: $pressStart2P;
+  font-size: 4.5rem;
+}
+h2 {
+  font-size: 3rem;
+  font-family: $roboto;
+}
+
+a {
   color: $primary;
+  font-family: $roboto;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background: $primary;
+    color: $background;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+::selection,
+:focus {
+  background: $primary;
+  color: $background;
 }

@@ -4,5 +4,30 @@
 @import './stylePartials/animations.scss';
 
 body {
-  background: #000;
+  background: $background;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: solid 1px $primary;
+}
+section {
+  display: block;
+  padding: 50px;
+  border-bottom: solid 1px $primary;
+  > * {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  h2 {
+    margin-bottom: 20px;
+  }
+  p {
+    margin-bottom: 20px;
+  }
 }
