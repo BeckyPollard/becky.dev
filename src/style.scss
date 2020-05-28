@@ -1,2 +1,8 @@
 @import './stylePartials/meyerReset.scss';
-@import './stylePartials/helloWorld'; // example styles to know it's working
+@import './stylePartials/colours.scss';
+@import './stylePartials/typography.scss';
+@import './stylePartials/animations.scss';
+
+body {
+  background: #000;
+}
