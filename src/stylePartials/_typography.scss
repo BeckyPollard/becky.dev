@@ -1,6 +1,15 @@
+@font-face {
+  font-family: 'Animal Crossing WW';
+  src: url('./assets/fonts/animal-crossing.woff') format('woff2'),
+    url('./assets/fonts/animal-crossing.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 $pressStart2P: 'Press Start 2P', 'Consolas', sans-serif;
 $openSans: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
 $roboto: 'Roboto Slab', 'Consolas', sans-serif;
+$pixel: 'Animal Crossing WW', 'Open Sans', monospace;
 
 html {
   font-size: 62.5%;
@@ -29,17 +38,20 @@ h1 {
 }
 h2 {
   font-size: 3rem;
-  font-family: $roboto;
+  font-family: $pixel;
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.4rem;
 }
 
 a {
   color: $primary;
-  font-family: $roboto;
   transition: all 0.2s ease-in-out;
+  text-decoration: none;
   &:hover {
-    background: $primary;
-    color: $background;
+    color: $secondary;
     transition: all 0.2s ease-in-out;
+    animation: glowFlicker 0.01s ease infinite;
   }
 }
 
@@ -47,4 +59,5 @@ a {
 :focus {
   background: $primary;
   color: $background;
+  opacity: 1;
 }
