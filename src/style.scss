@@ -48,13 +48,17 @@ body {
       display: inline-block;
       text-align: center;
       width: 25%;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
+      @media screen and (max-width: 550px) {
+        width: 33.333%;
+      }
       svg {
         display: block;
         width: 5rem;
         fill: $primary;
         margin: 0 auto;
         position: relative;
+        margin-bottom: 1rem;
       }
     }
   }

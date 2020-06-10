@@ -1,8 +1,8 @@
 import './style.scss';
-import { helloWorld } from './scriptPartials/helloWorld';
+import { smoothScroll } from './scriptPartials/smoothScroll';
 
 const run = () => {
-  helloWorld();
+  smoothScroll();
 };
 
 run();

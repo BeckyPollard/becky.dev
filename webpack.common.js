@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -12,13 +13,10 @@ module.exports = {
       filename: 'index.html',
       favicon: './src/favicon.ico',
     }),
-    // ADD FOR EACH NEW HTML PAGE
-    // new HtmlWebpackPlugin({
-    //   template: './src/name.html',
-    //   filename: 'name.html',
-    //   favicon: './src/favicon.ico',
-    // }),
-    // TODO: better auto way of handling html pages?
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+    }),
   ],
   module: {
     rules: [
