@@ -31,10 +31,20 @@ module.exports = {
       {
         test: /\.(svg|png|jpg|jpeg)$/,
         use: {
-          loader: 'file-loader', //require assets linked in html
+          loader: 'file-loader',
           options: {
             name: '[name]-[hash].[ext]',
             outputPath: 'assets/images',
+          },
+        },
+      },
+      {
+        test: /\.(woff|woff2|ttf|otf|eot)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'assets/fonts',
           },
         },
       },
