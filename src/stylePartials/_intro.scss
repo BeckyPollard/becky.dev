@@ -25,6 +25,7 @@
   );
   background-size: 32px 32px;
   animation: 0.01s infinite static;
+  border-bottom: solid 1px darken($primary, 40%);
   &::before {
     content: '';
     width: 100%;
@@ -59,7 +60,6 @@
     top: 8rem;
     width: 100%;
     z-index: 20;
-    opacity: 0.8;
     padding-bottom: 1rem;
     max-width: 400px;
     ul li {
@@ -73,10 +73,19 @@
     }
   }
 
-  h2 {
+  h1 {
+    padding: 0px 2rem;
+    @media screen and (max-width: 550px) {
+      margin-bottom: 0px;
+    }
+  }
+
+  p {
     z-index: 20;
     position: relative;
-    text-transform: uppercase;
-    opacity: 0.8;
+    opacity: 0.9;
+    @media screen and (max-width: 550px) {
+      font-size: 2rem;
+    }
   }
 }

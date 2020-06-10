@@ -9,6 +9,13 @@ body {
   position: relative;
 }
 
+.wrapper {
+  padding: 10rem 2rem;
+  max-width: 980px;
+  margin: 0 auto;
+  border-bottom: solid 1px darken($primary, 40%);
+}
+
 // section {
 //   display: block;
 //   padding: 50px;
@@ -25,3 +32,59 @@ body {
 //     margin-bottom: 20px;
 //   }
 // }
+
+#about {
+  p span {
+    color: $background;
+  }
+}
+
+#skills {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    li {
+      display: inline-block;
+      text-align: center;
+      width: 25%;
+      margin-bottom: 2rem;
+      svg {
+        display: block;
+        width: 5rem;
+        fill: $primary;
+        margin: 0 auto;
+        position: relative;
+      }
+    }
+  }
+}
+
+#contact {
+  .wrapper {
+    border-bottom: 0px;
+  }
+  p {
+    text-align: center;
+    font-size: 1.2rem;
+    &:first-of-type {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+    }
+    &:last-of-type {
+      color: darken($primary, 60%);
+    }
+  }
+  ul {
+    text-align: center;
+    margin: 2rem 0;
+    li {
+      display: inline-block;
+      margin-right: 2rem;
+      position: relative;
+      a svg {
+        width: 3.5rem;
+      }
+    }
+  }
+}
