@@ -89,6 +89,12 @@ body {
       a svg {
         width: 3.5rem;
       }
+      a:focus {
+        background-color: $background;
+        svg {
+          fill: $secondary;
+        }
+      }
     }
   }
 }
