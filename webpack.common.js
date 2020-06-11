@@ -27,6 +27,7 @@ module.exports = {
         ],
       },
       {
+        //IMAGES
         test: /\.(svg|png|jpg|jpeg)$/,
         use: {
           loader: 'file-loader',
@@ -37,6 +38,18 @@ module.exports = {
         },
       },
       {
+        //FILES
+        test: /\.(pdf|doc|docx)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name]-[hash].[ext]',
+            outputPath: 'assets/files',
+          },
+        },
+      },
+      {
+        //FONTS
         test: /\.(woff|woff2|ttf|otf|eot)$/,
         use: {
           loader: 'file-loader',
