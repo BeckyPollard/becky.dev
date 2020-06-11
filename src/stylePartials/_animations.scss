@@ -8,6 +8,10 @@
 }
 .glowFlicker {
   animation: glowFlicker 0.01s ease infinite;
+  @media screen and (prefers-reduced-motion: reduce) {
+    animation-iteration-count: 0;
+    filter: drop-shadow(0px 0px 5px $primary);
+  }
 }
 
 @keyframes blink {
@@ -20,6 +24,9 @@
 }
 .blink {
   animation: blink 0.5s infinite;
+  @media screen and (prefers-reduced-motion: reduce) {
+    display: none;
+  }
 }
 
 @keyframes static {
@@ -75,16 +82,39 @@
   opacity: 0.1;
   pointer-events: none;
   z-index: 5;
+  @media screen and (prefers-reduced-motion: reduce) {
+    animation-iteration-count: 0;
+  }
 }
 
-.removeAnimations .static,
-.removeAnimations #intro {
+.disableAnimation .static,
+.disableAnimation #intro {
   animation-iteration-count: 0;
 }
-.removeAnimations .glowFlicker {
+.disableAnimation .glowFlicker {
   animation-iteration-count: 0;
   filter: drop-shadow(0px 0px 5px $primary);
 }
-.removeAnimations .blink {
+.disableAnimation .blink {
   display: none;
+}
+
+#intro button {
+  z-index: 999;
+  color: $secondary;
+  background: transparent;
+  border: 0;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  padding: 0.5rem;
+  @media screen and (max-width: 850px) {
+    left: unset;
+  }
+  &:hover,
+  &:focus {
+    color: $background;
+    background: $secondary;
+  }
 }
