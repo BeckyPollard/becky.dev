@@ -13,3 +13,6 @@ Fun fact: this is the third version of my personal website.
 - [Version 1](https://web.archive.org/web/20180118052458/http://beckypollard.com/) (2017)
 - [Version 2](https://web.archive.org/web/20180805212854/http://beckypollard.com/) (2018)
 - [Version 3](http://beckypollard.com) (2020)
+
+### Netlify Deploy Status
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5db2ab63-8ab5-4aeb-98aa-46b405c339ff/deploy-status)](https://app.netlify.com/sites/becky-dev/deploys) (becky.dev)
