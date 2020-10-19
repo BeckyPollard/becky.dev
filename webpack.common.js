@@ -13,14 +13,18 @@ module.exports = {
       filename: 'index.html',
       favicon: './src/favicon.ico',
     }),
+    new HtmlWebpackPlugin({
+      template: './src/resume.html',
+      filename: 'resume.html',
+      favicon: './src/favicon.ico',
+    }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
     }),
   ],
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.html$/,
         use: [
           'html-loader', //require assets linked in html
