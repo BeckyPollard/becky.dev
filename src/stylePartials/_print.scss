@@ -1,16 +1,14 @@
 #resume main {
   margin: 0 auto;
-  max-width: calc(8.5in - 40px);
-  padding: 20px;
-  height: calc(11in - 43px);
+  max-width: calc(8.5in);
+  height: calc(11in - 3px);
   overflow: hidden;
-  border: solid 1px red;
-  background: yellow;
+  // NEED MQ
 }
 
 @media print {
   @page {
-    // size: 8.5in 11in;
+    size: 8.5in 11in;
     margin: 0 !important;
   }
 }
