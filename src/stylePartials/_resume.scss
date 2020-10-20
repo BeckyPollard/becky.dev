@@ -1,5 +1,113 @@
 #resume {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+  background: #666;
+
+  svg {
+    padding-bottom: 4px;
+    vertical-align: middle;
+    text-align: left;
+    margin-left: 0.5rem;
+  }
+
+  h1 {
+    font-size: 4.2rem;
+    font-weight: 600;
+    margin-top: 8px;
+  }
+
+  h2 {
+    font-style: italic;
+    margin-left: 20px;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    span {
+      color: #666;
+      font-weight: normal;
+      font-style: italic;
+      font-size: 1.2rem;
+    }
+  }
+
   main {
     margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: $primary;
+
+    header,
+    #profile,
+    #work {
+      padding: 20px;
+    }
+
+    header {
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      color: $primary;
+      fill: $primary;
+      background: $background;
+
+      ul {
+        text-align: right;
+
+        a {
+          text-decoration: none;
+          color: $primary;
+
+          &:hover {
+            color: $secondary;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    #profile,
+    #work {
+      font-size: 1.2rem;
+
+      section {
+        border-bottom: solid 1px #000;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+
+        &:last-of-type {
+          margin-bottom: 0px;
+        }
+
+        ul {
+          font-size: 10px;
+
+          li:not(:last-of-type) {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+
+    #profile {
+      width: calc(100% / 3 - 40px);
+      height: 100%;
+    }
+
+    #work {
+      border-left: solid 2px #000;
+      width: calc(100% / 3 * 2 - 42px);
+      height: 100%;
+    }
   }
 }
