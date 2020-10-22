@@ -1,3 +1,12 @@
+//mq
+$mq1: 816px;
+$mq2: 650px;
+$mq3: 575px;
+$mq4: 450px;
+$mq5: 300px;
+
+@import './stylePartials/print.scss';
+
 #resume {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
   background: #666;
@@ -29,6 +38,9 @@
     margin-left: 2rem;
     color: #00f428;
     fill: #00f428;
+    @media only screen and (max-width: $mq3) {
+      margin-left: 0;
+    } 
   }
 
   h3 {
@@ -75,10 +87,25 @@
       color: #fff;
       fill: #fff;
       background: #000;
+      @media only screen and (max-width: $mq2) {
+        margin-bottom: 2rem;
+      }
+      @media only screen and (max-width: $mq3) {
+        display: block;
+        text-align: center;
+        padding-bottom: 4rem;
+        svg {
+          display: none;
+        }
+      }      
 
       ul {
         text-align: right;
         font-size: 1.4rem;
+        @media only screen and (max-width: $mq3) {
+          text-align: center;
+          margin-top: 2rem;
+        } 
 
         a {
           text-decoration: none;
@@ -96,16 +123,20 @@
     #profile,
     #work {
       font-size: 1.2rem;
+      @media only screen and (max-width: $mq2) {
+        padding: 0rem 2rem;
+      }
 
       section {
         border-bottom: solid 0.1rem #000;
         padding-bottom: 2rem;
         margin-bottom: 2rem;
-
+        @media only screen and (min-width: calc($mq2 - 1px)) {
         &:last-of-type {
           margin-bottom: 0rem;
           border-bottom: 0rem;
         }
+      }
 
         &:hover {
           h3 {
@@ -119,6 +150,9 @@
     #profile {
       width: calc(100% / 3 - 4rem);
       height: 100%;
+      @media only screen and (max-width: $mq2) {
+        width: 100%;
+      }
 
       ul {
 
@@ -132,6 +166,10 @@
       border-left: solid 0.2rem #000;
       width: calc(100% / 3 * 2 - 4.2rem);
       height: 100%;
+      @media only screen and (max-width: $mq2) {
+        border: 0;
+        width: 100%;
+      }
     }
 
     #experience {
@@ -174,6 +212,14 @@
         li {
           width: calc(33.333% - 1rem);
           margin-bottom: 0.5rem;
+          @media only screen and (max-width: $mq4) {
+            width: calc(50% - 1rem);
+          } 
+          @media only screen and (max-width: $mq5) {
+            width: calc(100%);
+            list-style-type: disc;
+            margin-left: 1.4rem;
+          } 
 
         }
       }
