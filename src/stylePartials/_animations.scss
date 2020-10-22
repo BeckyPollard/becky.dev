@@ -89,7 +89,7 @@
 
 .disableAnimation .static,
 .disableAnimation #intro {
-  animation-iteration-count: 0;
+  animation-iteration-count: 0 !important;
 }
 .disableAnimation .glowFlicker {
   animation-iteration-count: 0;
