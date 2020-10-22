@@ -4,6 +4,11 @@
 
   * {
     transition: all 0.2s ease-in-out;
+
+    &::selection {
+      background: #00f428;
+      color: #000;
+    }
   }
 
   svg {
@@ -23,6 +28,7 @@
     font-style: italic;
     margin-left: 2rem;
     color: #00f428;
+    fill: #00f428;
   }
 
   h3 {
