@@ -1,98 +1,189 @@
+@import './stylePartials/print.scss';
 @import './stylePartials/meyerReset.scss';
 @import './stylePartials/colours.scss';
 @import './stylePartials/typography.scss';
 @import './stylePartials/animations.scss';
-@import './stylePartials/intro.scss';
+@import './stylePartials/resume.scss';
 
-body {
+#portfolio {
   background: $background;
   position: relative;
-}
 
-.wrapper {
-  padding: 10rem 2rem;
-  max-width: 980px;
-  margin: 0 auto;
-  border-bottom: solid 1px darken($primary, 40%);
-}
-
-// section {
-//   display: block;
-//   padding: 50px;
-//   border-bottom: solid 1px $primary;
-//   background: #000;
-//   > * {
-//     max-width: 980px;
-//     margin: 0 auto;
-//   }
-//   h2 {
-//     margin-bottom: 20px;
-//   }
-//   p {
-//     margin-bottom: 20px;
-//   }
-// }
-
-#about {
-  p span {
-    color: $background;
-  }
-}
-
-#skills {
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 2rem 0;
-    li {
-      display: inline-block;
-      text-align: center;
-      width: 25%;
-      margin-bottom: 3rem;
-      @media screen and (max-width: 550px) {
-        width: 33.333%;
-      }
-      svg {
-        display: block;
-        width: 5rem;
-        fill: $primary;
-        margin: 0 auto;
-        position: relative;
-        margin-bottom: 1rem;
-      }
-    }
-  }
-}
-
-#contact {
   .wrapper {
-    border-bottom: 0px;
+    padding: 10rem 2rem;
+    max-width: 980px;
+    margin: 0 auto;
+    border-bottom: solid 1px darken($primary, 40%);
   }
-  p {
+
+  #intro {
+    width: 100%;
     text-align: center;
-    font-size: 1.2rem;
-    &:first-of-type {
-      font-size: 2.5rem;
-      text-transform: uppercase;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    $one: #070012;
+    $two: #000917;
+    background-image: linear-gradient(90deg,
+        #000000 25%,
+        $one 25%,
+        $one 31.25%,
+        $two 43.75%,
+        $two 50%,
+        #000000 50%,
+        #000000 75%,
+        $one 75%,
+        $one 76.25%,
+        $two 93.75%,
+        $two 100%);
+    background-size: 32px 32px;
+    animation: 0.01s infinite static;
+    border-bottom: solid 1px darken($primary, 40%);
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      background-image: linear-gradient(0deg,
+          rgba(0, 0, 0, 0.5) 25%,
+          transparent 25%,
+          transparent 50%,
+          rgba(0, 0, 0, 0.5) 50%,
+          rgba(0, 0, 0, 0.5) 75%,
+          transparent 75%,
+          transparent 100%);
+      background-size: 4px 4px;
+      z-index: 2;
+      pointer-events: none;
     }
-    &:last-of-type {
-      color: darken($primary, 60%);
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      background: radial-gradient(circle, rgba(0, 0, 0, 0) 40%, rgb(0, 0, 0) 100%);
+      z-index: 10;
+      pointer-events: none;
     }
-  }
-  ul {
-    text-align: center;
-    margin: 2rem 0;
-    li {
-      display: inline-block;
-      margin-right: 2rem;
-      position: relative;
-      a svg {
-        width: 3.5rem;
+
+    nav {
+      position: absolute;
+      top: 8rem;
+      width: 100%;
+      z-index: 20;
+      padding-bottom: 1rem;
+      max-width: 400px;
+
+      ul li {
+        display: inline-block;
+
+        &:not(:last-of-type) {
+          margin-right: 3.5rem;
+        }
       }
-      a:focus {
-        background-color: $background;
+
+      @media screen and (max-height: 370px) {
+        position: static;
+      }
+    }
+
+    h1 {
+      padding: 0px 2rem;
+
+      @media screen and (max-width: 550px) {
+        margin-bottom: 0px;
+      }
+    }
+
+    p {
+      z-index: 20;
+      position: relative;
+      opacity: 0.9;
+
+      @media screen and (max-width: 550px) {
+        font-size: 2rem;
+      }
+    }
+  }
+
+
+  #about {
+    p span {
+      color: $background;
+    }
+  }
+
+  #skills {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 2rem 0;
+
+      li {
+        display: inline-block;
+        text-align: center;
+        width: 25%;
+        margin-bottom: 3rem;
+
+        @media screen and (max-width: 550px) {
+          width: 33.333%;
+        }
+
         svg {
-          fill: $secondary;
+          display: block;
+          width: 5rem;
+          fill: $primary;
+          margin: 0 auto;
+          position: relative;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+  #contact {
+    .wrapper {
+      border-bottom: 0px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.2rem;
+
+      &:first-of-type {
+        font-size: 2.5rem;
+        text-transform: uppercase;
+      }
+
+      &:last-of-type {
+        color: darken($primary, 60%);
+      }
+    }
+
+    ul {
+      text-align: center;
+      margin: 2rem 0;
+
+      li {
+        display: inline-block;
+        margin-right: 2rem;
+        position: relative;
+
+        a svg {
+          width: 3.5rem;
+        }
+
+        a:focus {
+          background-color: $background;
+
+          svg {
+            fill: $secondary;
+          }
         }
       }
     }
