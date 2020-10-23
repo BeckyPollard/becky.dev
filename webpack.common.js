@@ -18,6 +18,11 @@ module.exports = {
       filename: 'resume.html',
       favicon: './src/favicon.ico',
     }),
+    new HtmlWebpackPlugin({
+      template: './src/contact.html',
+      filename: 'contact.html',
+      favicon: './src/favicon.ico',
+    }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
