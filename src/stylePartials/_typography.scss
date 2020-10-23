@@ -101,4 +101,8 @@ body {
     color: $background;
     opacity: 1;
   }
+  :focus:hover {
+    color: #000;
+    -webkit-text-stroke: 1px #000;
+  }
 }
