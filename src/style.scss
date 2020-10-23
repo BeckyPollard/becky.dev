@@ -24,22 +24,6 @@
     justify-content: center;
     flex-direction: column;
     position: relative;
-    $one: #070012;
-    $two: #000917;
-    background-image: linear-gradient(90deg,
-        #000000 25%,
-        $one 25%,
-        $one 31.25%,
-        $two 43.75%,
-        $two 50%,
-        #000000 50%,
-        #000000 75%,
-        $one 75%,
-        $one 76.25%,
-        $two 93.75%,
-        $two 100%);
-    background-size: 32px 32px;
-    animation: 0.01s infinite static;
     border-bottom: solid 1px darken($primary, 40%);
 
     &::before {
