@@ -83,13 +83,15 @@
   pointer-events: none;
   z-index: 5;
   @media screen and (prefers-reduced-motion: reduce) {
-    animation-iteration-count: 0;
+    animation-iteration-count: 0 !important;
+    animation: 0s !important;
   }
 }
 
 .disableAnimation .static,
 .disableAnimation #intro {
   animation-iteration-count: 0 !important;
+  animation: 0s !important;
 }
 .disableAnimation .glowFlicker {
   animation-iteration-count: 0;
@@ -98,8 +100,14 @@
 .disableAnimation .blink {
   display: none;
 }
+#intro {
+  @media screen and (prefers-reduced-motion: reduce) {
+    animation-iteration-count: 0 !important;
+    animation: 0s !important;
+  }
+}
 
-#intro button {
+#intro button#disableAnim {
   z-index: 999;
   color: $secondary;
   background: transparent;
@@ -116,5 +124,8 @@
   &:focus {
     color: $background;
     background: $secondary;
+  }
+  @media screen and (prefers-reduced-motion: reduce) {
+    display: none;
   }
 }
