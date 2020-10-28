@@ -13,7 +13,6 @@
     padding: 10rem 2rem;
     max-width: 980px;
     margin: 0 auto;
-    border-bottom: solid 1px darken($primary, 40%);
   }
 
   #intro {
@@ -89,6 +88,12 @@
       z-index: 20;
       position: relative;
       opacity: 0.9;
+      margin: 0;
+
+      &:nth-of-type(2) {
+        color: $secondary;
+        opacity: 0.8;
+      }
 
       @media screen and (max-width: 550px) {
         font-size: 2rem;
