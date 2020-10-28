@@ -85,14 +85,13 @@
     }
 
     p {
-      z-index: 20;
       position: relative;
-      opacity: 0.9;
+      opacity: 0.8;
       margin: 0;
+      z-index: 20;
 
       &:nth-of-type(2) {
         color: $secondary;
-        opacity: 0.8;
       }
 
       @media screen and (max-width: 550px) {
