@@ -128,7 +128,6 @@ $mq5: 300px;
       }
 
       section {
-        border-bottom: solid 0.1rem #000;
         padding-bottom: 2rem;
         margin-bottom: 2rem;
         @media only screen and (min-width: calc($mq2 - 1px)) {
@@ -154,8 +153,11 @@ $mq5: 300px;
         width: 100%;
       }
 
-      ul {
+      section:not(:last-of-type) {
+        border-bottom: solid 0.1rem #000;
+      }
 
+      ul {
         li:not(:last-of-type) {
           margin-bottom: 1rem;
         }
@@ -204,14 +206,13 @@ $mq5: 300px;
     }
 
     #skills {
-      border-bottom: 0 !important;
       ul {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
 
         li {
-          width: calc(33.333% - 1rem);
+          width: calc(50% - 1rem);
           margin-bottom: 0.5rem;
           @media only screen and (max-width: $mq4) {
             width: calc(50% - 1rem);

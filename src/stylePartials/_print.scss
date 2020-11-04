@@ -8,10 +8,12 @@
 }
 
 @media print {
+  body {
+    margin: 0mm !important;
+  }
   @page {
     size: 8.5in 11in;
     margin: 0mm !important;
     padding: 0mm !important;
-    margin-bottom: 0mm !important;
   }
 }
