@@ -10,7 +10,22 @@
   animation: anim-glowFlicker 0.01s ease infinite;
   @media screen and (prefers-reduced-motion: reduce) {
     animation-iteration-count: 0;
-    filter: drop-shadow(0px 0px 5px $primary);
+    filter: drop-shadow(0px 0px 10px $primary);
+  }
+}
+@keyframes anim-glowFlicker-alt {
+  0% {
+    filter: drop-shadow(0px 0px 15px $secondary);
+  }
+  100% {
+    filter: drop-shadow(0px 0px 5px $secondary);
+  }
+}
+.anim-glowFlicker-alt {
+  animation: anim-glowFlicker-alt 0.01s ease infinite;
+  @media screen and (prefers-reduced-motion: reduce) {
+    animation-iteration-count: 0;
+    filter: drop-shadow(0px 0px 10px $secondary);
   }
 }
 
@@ -124,7 +139,7 @@
   display: none;
 }
 
-#intro button#disableAnim {
+button#disableAnim {
   z-index: 999;
   color: $secondary;
   background: transparent;
@@ -134,6 +149,7 @@
   left: 20px;
   cursor: pointer;
   padding: 0.5rem;
+  filter: drop-shadow(0px 0px 5px $secondary);
   @media screen and (max-width: 850px) {
     left: unset;
   }

@@ -84,96 +84,23 @@
       }
     }
 
+    h2 {
+      color: $secondary;
+      filter: drop-shadow(0px 0px 5px $secondary);
+    }
+
     p {
+      color: $primary;
+    }
+    
+    h2, p {
       position: relative;
       opacity: 0.8;
       margin: 0;
       z-index: 20;
 
-      &:nth-of-type(2) {
-        color: $secondary;
-      }
-
       @media screen and (max-width: 550px) {
         font-size: 2rem;
-      }
-    }
-  }
-
-
-  #about {
-    p span {
-      color: $background;
-    }
-  }
-
-  #skills {
-    ul {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 2rem 0;
-
-      li {
-        display: inline-block;
-        text-align: center;
-        width: 25%;
-        margin-bottom: 3rem;
-
-        @media screen and (max-width: 550px) {
-          width: 33.333%;
-        }
-
-        svg {
-          display: block;
-          width: 5rem;
-          fill: $primary;
-          margin: 0 auto;
-          position: relative;
-          margin-bottom: 1rem;
-        }
-      }
-    }
-  }
-
-  #contact {
-    .wrapper {
-      border-bottom: 0px;
-    }
-
-    p {
-      text-align: center;
-      font-size: 1.2rem;
-
-      &:first-of-type {
-        font-size: 2.5rem;
-        text-transform: uppercase;
-      }
-
-      &:last-of-type {
-        color: darken($primary, 60%);
-      }
-    }
-
-    ul {
-      text-align: center;
-      margin: 2rem 0;
-
-      li {
-        display: inline-block;
-        margin-right: 2rem;
-        position: relative;
-
-        a svg {
-          width: 3.5rem;
-        }
-
-        a:focus {
-          background-color: $background;
-
-          svg {
-            fill: $secondary;
-          }
-        }
       }
     }
   }
