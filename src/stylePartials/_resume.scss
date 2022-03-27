@@ -5,7 +5,7 @@ $mq3: 575px;
 $mq4: 450px;
 $mq5: 300px;
 
-@import './stylePartials/print.scss';
+@import './print';
 
 #resume {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
@@ -18,6 +18,24 @@ $mq5: 300px;
       background: #00f428;
       color: #000;
     }
+  }
+
+  #date-stamp {
+    color: #fff;
+    font-size: 1.2rem;
+    background-color: #000;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px;
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
+
+    @media only screen and (max-width: 1145px) {
+      opacity: 0;
+    } 
   }
 
   svg {
@@ -56,7 +74,7 @@ $mq5: 300px;
 
   h4 {
     font-size: 1.4rem;
-    font-weight: 600;
+    font-weight: 900;
 
     span {
       color: #666;
