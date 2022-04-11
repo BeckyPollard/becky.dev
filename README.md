@@ -29,3 +29,7 @@ Fun fact: this is the third version of my personal website.
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5db2ab63-8ab5-4aeb-98aa-46b405c339ff/deploy-status)](https://app.netlify.com/sites/becky-dev/deploys) [becky.dev](https://becky.dev)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/90d66802-4657-41c8-bb16-3917275f5ec9/deploy-status)](https://app.netlify.com/sites/beckypollard/deploys) [beckypollard.com](https://beckypollard.com)
+
+![because it is fun](https://user-images.githubusercontent.com/52248161/162846503-fb51676f-eeae-4559-b34a-acf94fb3a0e4.png)
+
+
