@@ -1,0 +1,237 @@
+#resume {
+  margin: 0 auto;
+  max-width: calc(8.5in);
+}
+
+@media only screen and (min-width: 816px) {
+  #resume {
+    height: calc(11in);
+    overflow: hidden;
+  }
+}
+
+@media print {
+  body {
+    margin: 0mm !important;
+  }
+
+  #date-stamp {
+    display: none;
+  }
+  
+  @page {
+    size: 8.5in 11in;
+    margin: 0mm !important;
+    padding: 0mm !important;
+  }
+}
+
+#resume {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+  background: #666;
+}
+#resume #date-stamp {
+  color: #fff;
+  font-size: 1.2rem;
+  background-color: #000;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 5px;
+  opacity: 0.5;
+}
+#resume #date-stamp:hover {
+  opacity: 1;
+}
+@media only screen and (max-width: 1145px) {
+  #resume #date-stamp {
+    opacity: 0;
+  }
+}
+#resume svg {
+  padding-bottom: 0.4rem;
+  vertical-align: middle;
+  text-align: left;
+  margin-left: 0.5rem;
+}
+#resume h1 {
+  font-size: 4.2rem;
+  font-weight: 600;
+  margin-top: 0.8rem;
+}
+#resume h2 {
+  font-style: italic;
+  margin-left: 2rem;
+  color: var(--primary);
+  fill: var(--primary);
+}
+@media only screen and (max-width: 575px) {
+  #resume h2 {
+    margin-left: 0;
+  }
+}
+#resume h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  background: #000;
+  display: inline-block;
+  color: #fff;
+  padding: 0 1rem;
+}
+#resume h4 {
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+#resume h4 span {
+  color: #666;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+#resume main {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background: #fff;
+}
+#resume header,#resume #profile,#resume #work {
+  padding: 2rem;
+}
+#resume header {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  fill: #fff;
+  background: #000;
+}
+@media only screen and (max-width: 650px) {
+  #resume header {
+    margin-bottom: 2rem;
+  }
+}
+@media only screen and (max-width: 575px) {
+  #resume header {
+    display: block;
+    text-align: center;
+    padding-bottom: 4rem;
+  }
+  #resume header svg {
+    display: none;
+  }
+}
+#resume header ul {
+  text-align: right;
+  font-size: 1.4rem;
+}
+@media only screen and (max-width: 575px) {
+  #resume header ul {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
+#resume header ul a {
+  text-decoration: none;
+  color: #fff;
+}
+#resume header ul a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+  fill: var(--primary);
+}
+#resume #profile,#resume #work {
+  font-size: 1.2rem;
+}
+@media only screen and (max-width: 650px) {
+  #resume #profile,#resume #work {
+    padding: 0rem 2rem;
+  }
+}
+#resume #profile section,#resume #work section {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+@media only screen and (min-width: calc(650px - 1px)) {
+  #resume #profile section:last-of-type,#resume #work section:last-of-type {
+    margin-bottom: 0rem;
+    border-bottom: 0rem;
+  }
+}
+#resume #profile section:hover h3,#resume #work section:hover h3 {
+  color: var(--primary);
+  font-style: italic;
+}
+#resume #profile {
+  width: calc(100% / 3 - 4rem);
+  height: 100%;
+}
+@media only screen and (max-width: 650px) {
+  #resume #profile {
+    width: 100%;
+  }
+}
+#resume #profile section:not(:last-of-type) {
+  border-bottom: solid 0.1rem #000;
+}
+#resume #profile ul li:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+#resume #work {
+  border-left: solid 0.2rem #000;
+  width: calc(100% / 3 * 2 - 4.2rem);
+  height: 100%;
+}
+@media only screen and (max-width: 650px) {
+  #resume #work {
+    border: 0;
+    width: 100%;
+  }
+}
+#resume #experience {
+  padding-bottom: 1rem !important;
+}
+#resume #experience>ul>li:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+#resume #experience ul p {
+  font-weight: 600;
+  font-style: italic;
+}
+#resume #experience ul p span {
+  color: #666;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+#resume #experience ul ul {
+  margin: 1rem 0 1rem 2rem;
+}
+#resume #experience ul ul li {
+  list-style: disc;
+}
+#resume #skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#resume #skills ul li {
+  width: calc(50% - 1rem);
+  margin-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 450px) {
+  #resume #skills ul li {
+    width: calc(50% - 1rem);
+  }
+}
+@media only screen and (max-width: 300px) {
+  #resume #skills ul li {
+    width: calc(100%);
+    list-style-type: disc;
+    margin-left: 1.4rem;
+  }
+}

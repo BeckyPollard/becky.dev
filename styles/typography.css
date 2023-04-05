@@ -1,0 +1,30 @@
+@font-face {
+  font-family:'AnimalCrossingWW';
+  src:url(../fonts/animal-crossing.woff) format("woff2"),url(./fonts/animal-crossing.woff) format("woff");
+  font-weight:normal;
+  font-style:normal;
+}
+
+:root {
+  --primary: #00f428;
+  --AnimalCrossingWW: "AnimalCrossingWW","Open Sans",monospace;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+*::selection, *:focus {
+  background: var(--primary);
+  color: #000;
+}
+*:focus:hover {
+  color: #000;
+  -webkit-text-stroke: 1px #000;
+}

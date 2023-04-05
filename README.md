@@ -9,7 +9,7 @@ The design for the site is inspired by a computer screen, specifically by the mo
 
 ## Résumé Feature
 
-Nobody will notice this, so I'm writing about it here.
+Nobody will notice this, so I'm writing about it here... where nobody will read.
 
 I hate résumés. They're ugly. There's way too much content to cram onto one page. What I hate more than résumés though is using word processors <del>or InDesign</del> to try and create a stylish résumé design. And even worse, when you finally have an okay résumé PDF you frequently need to edit it to tailor to the job you're applying for.
 
