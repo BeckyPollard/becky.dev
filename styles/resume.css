@@ -3,13 +3,6 @@
   max-width: calc(8.5in);
 }
 
-@media only screen and (min-width: 816px) {
-  #resume {
-    height: calc(11in);
-    overflow: hidden;
-  }
-}
-
 @media print {
   body {
     margin: 0mm !important;
@@ -97,7 +90,13 @@
   flex-wrap: wrap;
   background: #fff;
 }
-#resume header,#resume #profile,#resume #work {
+@media only screen and (min-width: 816px) {
+  #resume main {
+    height: calc(11in);
+    overflow: hidden;
+  }
+}
+#resume header, #resume #profile, #resume #work {
   padding: 2rem;
 }
 #resume header {
