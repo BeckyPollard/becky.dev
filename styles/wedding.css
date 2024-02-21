@@ -18,7 +18,7 @@
   font-family: var(--Lordish);
   font-size: 12rem;
 }
-#wedding h2, h3, p {
+#wedding h2, #wedding h3, #wedding p {
   font-family: "Spectral SC", serif;
   font-size: 2.5rem;
   margin-bottom: 2rem;
