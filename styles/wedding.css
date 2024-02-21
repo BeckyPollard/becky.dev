@@ -1,0 +1,28 @@
+#wedding {
+  color: #fff;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  background: #000;
+  position: relative;
+}
+#wedding #intro {
+  width: 100%;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+#wedding h1 {
+  font-family: var(--Lordish);
+  font-size: 12rem;
+}
+#wedding h2, h3, p {
+  font-family: "Spectral SC", serif;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+#wedding h3 {
+  font-size: 5rem;
+}
