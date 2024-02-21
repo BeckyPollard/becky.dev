@@ -26,3 +26,16 @@
 #wedding h3 {
   font-size: 5rem;
 }
+
+@media only screen and (max-width: 660px) {
+  #wedding h1 {
+    font-size: 7rem;
+    margin-bottom: 2rem;
+  }
+  #wedding h2, #wedding p {
+    font-size: 1.8rem;
+  }
+  #wedding h3 {
+    font-size: 3.5rem;
+  }
+}
