@@ -4,7 +4,18 @@
   background: #000;
   font-size: 2.5rem;
   position: relative;
+  padding: 0 20px;
 }
+
+#wedding *::selection, *:focus {
+  background: #fff;
+  color: #000;
+}
+#wedding a:hover {
+  background-color: #fff;
+  color: #000;
+}
+
 #wedding main {
   max-width: 600px;
   margin: 0 auto;
@@ -28,6 +39,9 @@
   font-size: 2rem;
   text-align: left;
   list-style: disc;
+}
+#wedding section#rsvp a {
+  font-size: 3rem;
 }
 #wedding section#local h3 {
   margin-top: 2rem;
@@ -65,7 +79,7 @@
   text-decoration: underline;
 }
 #wedding a {
-  color: rgb(0, 68, 255);
+  color: #0044ff;
 }
 #wedding .break {
   /* max-width: 450px; */
@@ -79,14 +93,14 @@ iframe {
 
 @media only screen and (max-width: 660px) {
   #wedding h1 {
-    font-size: 7rem;
+    font-size: 7.5rem;
     margin-bottom: 2rem;
   }
-  #wedding h2,
+  #wedding h3,
   #wedding p {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
-  #wedding h3 {
+  #wedding h2 {
     font-size: 3.5rem;
   }
 }
