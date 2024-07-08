@@ -1,30 +1,80 @@
 #wedding {
   color: #fff;
-  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  font-family: 'Spectral SC', 'Helvetica', 'Arial', sans-serif;
   background: #000;
+  font-size: 2.5rem;
   position: relative;
 }
-#wedding #intro {
-  width: 100%;
+#wedding main {
+  max-width: 600px;
+  margin: 0 auto;
   text-align: center;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   position: relative;
+  padding: 8rem 0;
 }
+#wedding section {
+  width: 100%;
+  border-bottom: solid 1px #666;
+  padding: 4rem 0 4rem 0;
+}
+#wedding section:last-of-type {
+  border-bottom: none;
+}
+#wedding section#local ul, h3 {
+  font-size: 2rem;
+  text-align: left;
+  list-style: disc;
+}
+#wedding section#local h3 {
+  margin-top: 2rem;
+}
+#wedding section#local li {
+  margin-left: 2rem;
+}
+
 #wedding h1 {
   font-family: var(--Lordish);
   font-size: 12rem;
+  margin-bottom: 3rem;
 }
-#wedding h2, #wedding h3, #wedding p {
-  font-family: "Spectral SC", serif;
-  font-size: 2.5rem;
+#wedding h2 {
+  font-size: 5rem;
+  font-weight: 600;
   margin-bottom: 2rem;
 }
 #wedding h3 {
-  font-size: 5rem;
+  font-weight: 600;
+}
+
+#wedding p strong,
+#wedding p b {
+  font-weight: bold;
+}
+#wedding p {
+  margin-bottom: 2.5rem;
+  line-height: 1.25;
+}
+#wedding span {
+  font-size: 3.5rem;
+}
+#wedding strong {
+  text-decoration: underline;
+}
+#wedding a {
+  color: rgb(0, 68, 255);
+}
+#wedding .break {
+  /* max-width: 450px; */
+  width: 100%;
+}
+
+iframe {
+  width: 100%;
+  filter: grayscale(1) brightness(1.2);
 }
 
 @media only screen and (max-width: 660px) {
@@ -32,7 +82,8 @@
     font-size: 7rem;
     margin-bottom: 2rem;
   }
-  #wedding h2, #wedding p {
+  #wedding h2,
+  #wedding p {
     font-size: 1.8rem;
   }
   #wedding h3 {
