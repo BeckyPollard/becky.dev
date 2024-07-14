@@ -76,8 +76,9 @@ h3:has(+ul) {
   margin-bottom: 2.5rem;
   line-height: 1.25;
 }
-#wedding span {
-  font-size: 3.5rem;
+#wedding span.secret {
+  font-size: 1.4rem;
+  color: #000;
 }
 #wedding strong {
   text-decoration: underline;
