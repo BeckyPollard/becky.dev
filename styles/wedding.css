@@ -35,13 +35,16 @@
 #wedding section:last-of-type {
   border-bottom: none;
 }
-#wedding section#local ul, h3 {
+#wedding section#rsvp a {
+  font-size: 3rem;
+}
+h3:has(+ul) {
+  text-align: left;
+}
+#wedding section#local ul{
   font-size: 2rem;
   text-align: left;
   list-style: disc;
-}
-#wedding section#rsvp a {
-  font-size: 3rem;
 }
 #wedding section#local h3 {
   margin-top: 2rem;
@@ -62,6 +65,7 @@
 }
 #wedding h3 {
   font-weight: 600;
+  font-size: 2.8rem;
 }
 
 #wedding p strong,
@@ -96,7 +100,7 @@ iframe {
     font-size: 7.5rem;
     margin-bottom: 2rem;
   }
-  #wedding h3,
+  #wedding h3
   #wedding p {
     font-size: 2rem;
   }
