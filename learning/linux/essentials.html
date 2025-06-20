@@ -194,6 +194,7 @@
       <h3>grep / egrep</h3>
       <p>This command is used to filter lines in a file or the output of another command that matches a specified pattern using <em>regex</em>.</p>
       <p><span>grep [options] pattern [files]</span></p>
+      <p><span>grep -i '^[0-9].*[ts]' /etc/hosts</span></p>
       <p class="tab"><span>-c</span> - prints only a count of the lines that match a pattern</p>
       <p class="tab"><span>-n</span> - show line numbers in the output</p>
       <p class="tab"><span>-w</span> - exact value search (word search), result will not pick up words containing search string</p>
@@ -219,13 +220,16 @@
       <p>Archiving combines multiple files into one, which eliminates the overhead in individual files and makes the files easier to transmit. Archiving is the solution to sending someone several files at once.</p>
       <p><span>tar</span> - Create, extract, and view archive files, the traditional UNIX archiving utility</p>
       <p class="tab"><span>-c</span> - create mode <span>tar -c [-f ARCHIVE] [OPTIONS] [FILE...]</span></p>
-      <p class="tab"><span>-z</span> - compress created archive with <em>gzip</em></p>
-      <p class="tab"><span>-j</span> - compress created archive <em>bzip</em></p>
+      <p class="tab"><span>-z</span> - compress created archive with <em>gzip</em> .gz</p>
+      <p class="tab"><span>-j</span> - compress created archive <em>bzip</em> .bz2</p>
       <p class="tab"><span>-t</span> - list mode, see what's inside <span>tar -t [-f ARCHIVE] [OPTIONS]</span></p>
       <p class="tab"><span>-x</span> - extract mode, extract files from the archive <span>tar -x [-f ARCHIVE] [OPTIONS]</span></p>
       <p class="tab"><span>-f ARCHIVE</span> - operate on the given archive</p>
       <p><span>zip</span> - archive and compress files, the primary archiving utility in Microsoft</p>
       <p><span>unzip</span> - list and extract files from ZIP archives</p>
+      <br>
+      <p>example create: a bzip2 archive of /home created in /tmp with errors sent to null device</p>
+      <p class="tab"><span>tar -cj -f /tmp/home.tar.bz2 /home 2> /dev/null</span></p>
     </section>
 
 
@@ -288,6 +292,17 @@
       <p class="code">
         #!/bin/bash<br><br>
         echo "Hello $1"
+      </p>
+      <p class="code">
+        #!/bin/bash<br><br>
+        if [ $# -ne 2 ] <br>
+        &nbsp;&nbsp;then <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;echo "You need to give TWO args" <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;exit 1 <br>
+        fi <br>
+        <br>
+        let sum=$1+$1 <br>
+        echo "The sum of $1 and $2 is $sum"
       </p>
       <br>
 
