@@ -73,7 +73,7 @@
   position: absolute;
   top: 0;
   display: block;
-  background: url(../images/whitenoise.png);
+  background: url(../images/textures/whitenoise.png);
   animation: 0.09s infinite anim-static;
   opacity: 0.1;
   pointer-events: none;
