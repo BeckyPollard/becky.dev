@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Becky's Notes: Learning Linux Essentials</title>
+  <link rel="stylesheet" href="./essentials.css">
+</head>
+<body>
+  <main>
+    <header>
+      <img src="https://blob.gifcities.org/gifcities/7U4P2M6GIORQO76OBGE7FGFE3RWRP6SW.gif" alt="red floppy disc spinning">
+      <h1>Learning Linux: The Essentials Notes</h1>
+      <img src="https://blob.gifcities.org/gifcities/7U4P2M6GIORQO76OBGE7FGFE3RWRP6SW.gif" alt="red floppy disc spinning">
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#files">Files</a></li>
+        <li><a href="#inout">Input/Output</a></li>
+        <li><a href="#glob">Globs</a></li>
+        <li><a href="#paths">Paths</a></li>
+        <li><a href="#regex">Regex</a></li>
+        <li><a href="#filter">Filtering</a></li>
+        <li><a href="#archcomp">Arcihve & compress</a></li>
+        <li><a href="#bash">Scripting</a></li>
+      </ul>
+    </nav>
+    <section>
+      <h2>Creating a new user account</h2>
+      <p>The user name should be "your full last name followed by the dash and then followed by the first two letters of the first name". Set the password to be: <span>netlab123</span></p>
+      <p class='code'>
+        sudo useradd -m -G sudo pollard-be<br>
+        sudo passwd pollard-be <br>
+        su - pollard-be
+      </p>
+    </section>
+
+
+    <section id='files'>
+      <h2>Working with files</h2>
+      <h3>Viewing</h3>
+      <p><span>pwd</span> - prints working directory</p>
+      <p><span>ls</span> - list files in the directory</p>
+      <p class="tab"><span>-l</span> - long view, shows metadata</p>
+      <p class="tab"><span>-a</span> - show all files, even hidden files</p>
+      <p class="tab"><span>-h</span> - output human-readable file sizes</p>
+      <p><span>tree</span> - show the file tree of a directory</p>
+      <p><span>less</span> - provides advanced paging capability but is not included with all Linux distributions</p>
+      <p><span>more</span> - has fewer features than less, but is available in Linux distributions</p>
+      <p><span>head</span> - show lines from the <em>start</em> of a file</p>
+      <p class="tab"><span>-n 10</span> - example of showing a specified number of lines</p>
+      <p class="tab"><span>-n -10</span> - exclude that many lines from the end and only give you the first</p>
+      <p><span>tail</span> - show lines from the <em>end</em> of a file</p>
+      <p class="tab"><span>-n 10</span> - example of showing a specified number of lines</p>
+      <p class="tab"><span>-n +10</span> - exclude that many lines from the start and only give you the first</p>
+      <p><span>wc</span> - provides the number of lines, words and bytes</p>
+      <p class="tab"><span>-l</span> - just the numebr of lines</p>
+      <p class="tab"><span>-w</span> - show the number of words</p>
+      <p class="tab"><span>-c</span> - number of bytes</p>
+      <br>
+
+      <h3>Sorting</h3>
+      <p>By default, the <span>ls</span> command sorts files alphabetically by file name. Add these options to change that:</p>
+      <p class="tab"><span>-S</span> - sort by file size, large-to-small</p>
+      <p class="tab"><span>-t</span> - sort by time stamp, newest-to-oldest</p>
+      <p class="tab"><span>--full-time</span> - print full time</p>
+      <p class="tab"><span>-r</span> - reverse the defined sort</p>
+      <br>
+
+      <h3>Copying</h3>
+      <p><span>cp</span> - copy files</p>
+      <p class="tab"><span>cp [source(s)] [destination]</span></p>
+      <p class='tab'><span>-i</span> - will make the action interactive</p>
+      <p class='tab'><span>-v</span> - will make the action output verbose result information</p>
+      <p class='tab'><span>-r</span> - will allow copying directories (and copying files inside)</p>
+      <p class='tab'><span>-p</span> - will preserve file attributes, example date and permission modes</p>
+      <br>
+
+      <h3>Moving</h3>
+      <p><span>mv</span> - move and/or rename file</p>
+      <p class="tab"><span>mv [source(s)] [destination]</span></p>
+      <p class="tab">rename = <span>mv helloworld.txt hello.txt</span></p>
+      <p class='tab'><span>-i</span> - will make the action interactive</p>
+      <p class='tab'><span>-n</span> - will <em>not</em> overwrite files in destination</p>
+      <p class='tab'><span>-v</span> - will make the action output verbose result information</p>
+      <br>
+
+      <h3>Removing</h3>
+      <p>Danger zone. Always use <span>-i</span> to see what you're doing.</p>
+      <p><span>rm</span> - remove files or empty directories</p>
+      <p><span>rmdir</span> - remove directory</p>
+      <br>
+
+      <h3>Creating</h3>
+      <p><span>touch</span> - create an empty file</p>
+      <p><span>cat</span> - displays file contents, create with syntax <span>cat > file.txt</span> and enter file contents</p>
+
+      <p><span>mkdir</span> - make directory</p>
+    </section>
+
+
+    <section id='inout'>
+      <h2>Input/Output Control</h2>
+      <h3>Pipes</h3>
+      <p>The pipe <span>|</span> character can be used to send the output of one command to another. The result of the command will be passed to the second command this way. The last command will show the output. Pipe always connects two commands, you can pipe as many as you need through.</p>
+      <p class="tab"><span>cat /etc/psswd | head -n 5 | tail -n 2 | sort</span> - The output will be the sort command</p>
+      <br>
+
+      <h3>Redirection</h3>
+      <p>Deals with streams of data, how is the data being sent into the computer system.</p>
+      <p>Three streams of data:</p>
+      <p class="tab"><em>STDIN</em> - Standard input, or STDIN, is information entered normally by the user via the keyboard</p>
+      <p class="tab"><em>STDOUT</em> - Standard output, or STDOUT, is the normal output of commands. <span>></span> <span>>></span></p>
+      <p class="tab"><em>STDOUT</em> - Standard error, or STDERR, are error messages generated by commands <span>2></span> <span>2>></span></p>
+      <p class="tab"><em>STDOUT & STDERR</em> - <span>&></span> <span>&>></span></p>
+      <br>
+
+      <h3>Input Redirection</h3>
+      <p>This is the default flow. The following is the same:</p>
+      <p class="tab"><span>cat < example.txt</span> = <span>cat example.txt</span></p>
+      <br>
+
+      <h3>Output Redirection</h3>
+      <p>By default output is shown in the terminal. Send the output to a file instead. This is useful for huge outputs.</p>
+      <p>Separating output and error is useful. Yuu can use <span>2></span> and <span>2>></span> to separate the errors.</p>
+      <p class="tab"><span>></span> - if the file does not exist, the file will be made, if it does exist it will be <em>overwritten</em>.</p>
+      <p class="tab"><span>>></span> - if output file does not exist, the file will be made, if does exist the new content will be <em>appended</em>.</p>
+      <p class="tab"><span>date > d.txt</span> - will redirect the output to a d.txt file, will contain what the date command would normally output</p>
+      <p class="tab"><span>ls / blah 2> ls.err.txt</span> - will create an error file with all the errors of the command</p>
+      <p class="tab"><span>ls / blah &> ls.all.txt</span> - output both errors and output to a file</p>
+      <br>
+
+      <h3>Null device</h3>
+      <p><span>find / -name linux 2> /dev/null</span> - it works like a black hole, it doesn't go to the hard drive. If you will never review the errors why bother saving them? Discard them, banish them to the void.</p>
+    </section>
+
+
+    <section id='glob'>
+      <h2>Glob characters</h2>
+      <p>Glob characters are often referred to as <em>wild cards</em>. These are symbol characters that have special meaning to the shell.</p>
+      <p><span>*</span> - represent <em>zero or more</em> of any character in a filename</p>
+      <p><span>?</span> - represents <em>any single character</em>, each question mark character matches exactly one character</p>
+      <p><span>[ ]</span> - used to match a <em>single character</em> by representing a <em>range of characters</em> that are possible match characters</p>
+      <p class="tab">example: <span>/etc/*[0-9]*</span> attern displays any file that contains at least one number</p>
+      <p><span>!</span> - used in conjunction with the square brackets to <em>negate</em> a range</p>
+    </section>
+
+
+    <section id='paths'>
+      <h2>Paths</h2>
+      <p>In Linux, everything is stored in files. Files are used to store data such as text, graphics, and programs. Directories are a type of file used to store other files. Directories are used to provide a hierarchical organization structure.</p>
+      <p>A <em>relative path</em> is a path that specifies the location of a file or directory relative to the current working directory</p>
+      <p>An <em>absolute path</em> always begins from the absolute start of your hard drive and describes every step you must take through the filesystem to end up at the target location.</p>
+      <p><span>./</span> means this directory, always represents the current directory.</p>
+      <p><span>../</span> means up to parent directory, represents one directory higher relative to the current directory.</p>
+      <p><span>/</span> means the root directory, creating an <em>absolute path</em>.</p>
+      <p><span>~</span> means relative to home, path starts from home (not root) directory, creating an <em>absolute path</em></em>.</p>
+    </section>
+
+
+    <section id='regex'>
+      <h2>Regular Expressions</h2>
+      <p>Resources:</p>
+      <p class="tab"><a href="https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/">learnbyexample: GNU BRE/ERE cheatsheet</a></p>
+      <br>
+
+      <h3>BRE</h3>
+      <p><span>.</span> - match any single character</p>
+      <p><span>[ ]</span> - match any of these characters once</p>
+      <p><span>^</span> - restricts the match to the start of the string</p>
+      <p><span>$</span> - restricts the match to the end of the string</p>
+      <p><span>*</span> - repetition char, match 0 or more times (similar to <span>{0,}</span>)</p>
+      <p><span>{x,y}</span> - repetition char, from x to y many times</p>
+      <p class="tab"><span>\{x,y\}</span> - curly braces need to be escaped in BRE</p>
+      <p class="tab"><span>{x,}</span> - repetition char, from x many times</p>
+      <p class="tab"><span>{,y}</span> - repetition char, up to y many times</p>
+      <p class="tab"><span>{x}</span> - repetition char, exactly m many times</p>
+      <p><span>^$</span> is an empty line</p>
+      <br>
+
+      <h3>ERE</h3>
+      <p><span>?</span> - repetition char,  repeat 0 or 1 time (similar to <span>{0,1}</span>)</p>
+      <p><span>+</span> - repetition char, repeat at least 1 time (similar to <span>{1,}</span>)</p>
+      <p><span>(...)</span> - grouping operator, apply action to multiple characters</p>
+      <p><span>|</span> - or operator</p>
+      <p class="tab"><span>ste(v|ph)en</span></p>
+    </section>
+
+
+    <section id='filter'>
+      <h2>Filtering & grep</h2>
+      <h3>Filter</h3>
+      <p><span>cut</span> - extract columns of text from a file or standard input</p>
+      <br>
+      <h3>grep / egrep</h3>
+      <p>This command is used to filter lines in a file or the output of another command that matches a specified pattern using <em>regex</em>.</p>
+      <p><span>grep [options] pattern [files]</span></p>
+      <p class="tab"><span>-c</span> - prints only a count of the lines that match a pattern</p>
+      <p class="tab"><span>-n</span> - show line numbers in the output</p>
+      <p class="tab"><span>-w</span> - exact value search (word search), result will not pick up words containing search string</p>
+      <p class="tab"><span>-i</span> - switch to case insensitive mode</p>
+      <p class="tab"><span>-e</span> - EGREP mode, works with BRE (grep, basic regex) and ERE (extended regex)</p>
+      <p class="tab"><span>-f</span> - FGREP mode (fast grep, disables regex)</p>
+    </section>
+
+
+    <section id='archcomp'>
+      <h2>Archiving and compressing</h2>
+      <h3>Compression</h3>
+      <p>Compression makes the files smaller by removing redundant information. The most common compression tool for Linux is <em>gzip</em>.</p>
+      <p><span>gzip</span> - compress and decompress a file</p>
+      <p class="tab"><span>gzip example.txt</span></p>
+      <p class="tab"><span>-l</span> - provides info about the compression action</p>
+      <p class="tab"><span>-d</span> - decompresses .gz files</p>
+      <p><span>gunzip</span> - decompress a file</p>
+      <p><span>bzip</span> - compress and decompress a file</p>
+      <br>
+
+      <h3>Archive</h3>
+      <p>Archiving combines multiple files into one, which eliminates the overhead in individual files and makes the files easier to transmit. Archiving is the solution to sending someone several files at once.</p>
+      <p><span>tar</span> - Create, extract, and view archive files, the traditional UNIX archiving utility</p>
+      <p class="tab"><span>-c</span> - create mode <span>tar -c [-f ARCHIVE] [OPTIONS] [FILE...]</span></p>
+      <p class="tab"><span>-z</span> - compress created archive with <em>gzip</em></p>
+      <p class="tab"><span>-j</span> - compress created archive <em>bzip</em></p>
+      <p class="tab"><span>-t</span> - list mode, see what's inside <span>tar -t [-f ARCHIVE] [OPTIONS]</span></p>
+      <p class="tab"><span>-x</span> - extract mode, extract files from the archive <span>tar -x [-f ARCHIVE] [OPTIONS]</span></p>
+      <p class="tab"><span>-f ARCHIVE</span> - operate on the given archive</p>
+      <p><span>zip</span> - archive and compress files, the primary archiving utility in Microsoft</p>
+      <p><span>unzip</span> - list and extract files from ZIP archives</p>
+    </section>
+
+
+    <section id='bash'>
+      <h2>Bash scripting</h2>
+      <h3>VI editor</h3>
+      <p><span>vi mynewfile</span> - create a new file "mynewfile" and edits it in vi.</p>
+      <p class="tab"><span>i</span> - insert mode</p>
+      <p class="tab"><span>ESC</span> - exit mode</p>
+      <p class="tab"><span>j</span> - move cursor down (arrow ↓)</p>
+      <p class="tab"><span>k</span> - move cursor up (arrow ↑)</p>
+      <p class="tab"><span>l</span> - move cursor right (arrow →)</p>
+      <p class="tab"><span>h</span> - move cursor left (arrow ←)</p>
+      <p class="tab"><span>w</span> - move cursor beginning of the next word</p>
+      <p class="tab"><span>e</span> - move cursor to the end of the word</p>
+      <p class="tab"><span>b</span> - move cursor to the beginning of previous word</p>
+      <p class="tab"><span>$</span> - move cursor to the end of line</p>
+      <p class="tab"><span>0</span> - move cursor to the beginning of line</p>
+      <p class="tab"><span>SHIFT+G</span> - move cursor to the beginning of line</p>
+      <p class="tab"><span>dw</span> - delete word <span>2dw</span> - delete two word</p>
+      <p class="tab"><span>dd</span> - delete line</p>
+      <p class="tab"><span>yk</span> - copy/yank current word</p>
+      <p class="tab"><span>P</span> - paste last deleted/yanked</p>
+      <p class="tab"><span>x</span> - delete character</p>
+      <p class="tab"><span>u</span> - <em>undo</em></p>
+      <p class="tab"><span>o</span> - add blank line</p>
+      <p class="tab"><span>:%s/text //g</span> - search for and delete the word "text"</p>
+      <p class="tab"><span>:e!</span> - discard changes and reload</p>
+      <p class="tab"><span>:wq</span> - write to disc and exit vi (save and quit)</p>
+      <p class="tab"><span>:q!</span> - quit without saving</p>
+      <p>To make it clear that this is a BASH shell script, you need to include a special line at the top of the file called a "shbang" (or "shebang"). This line starts with <span>#!</span> and then contains the path to the BASH shell executable <span>#!/bin/bash</span>.</p>
+      <p><span>bash sample.sh</span> - to run a script.</p>
+      <p>You can avoid having to type bash in front of the filename by making the file "executable" for all users like this:</p>
+      <p class="code">
+        chmod a+x sample.sh<br>
+        ./sample.sh
+      </p>
+      <h3>Variables</h3>
+      <p>It is important that there are no spaces between the name of the variable, the equals sign, and the item to be assigned to the variable.</p>
+      <p>To assign to a variable, just use the name of the variable. To access the contents of the variable, prefix it with a dollar sign.</p>
+      <p class="code">
+        #!/bin/bash<br><br>
+        ANIMAL="penguin"<br>
+        echo "My favorite animal is a $ANIMAL"
+      </p>
+      <p>Another way to assign to a variable is to use the output of another command as the contents of the variable by enclosing the command in back ticks:</p>
+      <p class="code">
+        #!/bin/bash<br><br>
+        CURRENT_DIRECTORY=`pwd`<br>
+        echo "You are in $CURRENT_DIRECTORY"
+      </p>
+      <p>The <span>read</span> command can accept a string right from the keyboard or as part of command redirection </p>
+      <p class="code">
+        #!/bin/bash<br><br>
+        echo -n "What is your name? "<br>
+        read NAME <br>
+        echo "Hello $NAME!"
+      </p>
+      <p>A dollar <span>$</span> sign followed by a number N corresponds to the Nth argument passed to the script. If you call the following example with <span>./test.sh World</span> the output will be Hello World. The <span>$0</span> variable contains the name of the script itself.</p>
+      <p class="code">
+        #!/bin/bash<br><br>
+        echo "Hello $1"
+      </p>
+      <br>
+
+      <h3>Conditionals</h3>
+      <p>A basic if statement looks like this:</p>
+      <p class="code">
+        #!/bin/bash <br><br>
+        if grep -q root /etc/passwd; then<br>
+        &nbsp;&nbsp;echo root is in the password file<br>
+        else<br>
+        &nbsp;&nbsp;echo root is missing from the password file<br>
+        fi
+      </p>
+      <p>The <span>if</span> statement has a final form that lets you do multiple comparisons at one time using <span>elif</span> (short for else if).</p>
+      <p class="code">
+        #!/bin/bash <br><br>
+        if [ "$1" = "hello" ]; then<br>
+        &nbsp;&nbsp;echo "hello yourself"<br>
+        elif [ "$1" = "goodbye" ]; then<br>
+        &nbsp;&nbsp;echo "nice to have met you"<br>
+        &nbsp;&nbsp;echo "I hope to see you again"<br>
+        else<br>
+        &nbsp;&nbsp;echo "I didn't understand that"<br>
+        fi
+      </p>
+      <p>The <span>case</span> statement provides a different way of making multiple tests easier:</p>
+      <p class="code">
+        #!/bin/bash <br><br>
+        case "$1" in<br>
+        hello|hi)<br>
+        &nbsp;&nbsp;echo "hello yourself"<br>
+        &nbsp;&nbsp;;;<br>
+        goodbye)<br>
+        &nbsp;&nbsp;echo "nice to have met you"<br>
+        &nbsp;&nbsp;echo "I hope to see you again"<br>
+        &nbsp;&nbsp;;;<br>
+        *)<br>
+        &nbsp;&nbsp;echo "I didn't understand that"<br>
+        esac
+      </p>
+      <p>The <span>test</span> command gives you easy access to comparison and file test operators.</p>
+      <p class="tab"><span>test –f /dev/ttyS0</span> gives a 0 if the file exists</p>
+      <p class="tab"><span>test ! –f /dev/ttyS0</span> gives a 0 if the file does not exists</p>
+      <p class="tab"><span>test –d /tmp</span> gives a 0 if the directory exists</p>
+      <p class="tab"><span>test 1 –eq 1</span> 0 if numeric comparison succeeds</p>
+      <p class="tab"><span>test 1 –ne 1</span> test for numeric inequality</p>
+      <p class="tab"><span>test “a” = “a”</span> string comparison, 0 if succeed</p>
+      <p class="tab"><span>test 1 –eq 1 –o 2 –eq 2</span> test OR</p>
+      <p class="tab"><span>test 1 –eq 1 –a 2 –eq 2</span> test AND</p>
+      <br>
+
+      <h3>Loops</h3>
+      <p><span>for</span> loops are used when you have a finite collection over which you want to iterate.</p>
+      <p class="code">
+        #!/bin/bash <br><br>
+        SERVERS="servera serverb serverc"<br>
+        for S in $SERVERS; do<br>
+        &nbsp;&nbsp;echo "Doing something to $S"<br>
+        done<br>
+        <br><br>
+        for NAME in Sean Jon Isaac David; do<br>
+        &nbsp;&nbsp;echo "Hello $NAME"<br>
+        done<br>
+        <br><br>
+        for S in *; do<br>
+        &nbsp;&nbsp;echo "Doing something to $S"<br>
+        done
+      </p>
+      <p>A <span>while</span> loop, operates on a list of unknown size. Can think of it as “while some condition is true, do stuff.”</p>
+      <p class="code">
+        #!/bin/bash <br><br>
+        i=0<br>
+        while [ $i -lt 10 ]; do<br>
+        &nbsp;&nbsp;echo $i<br>
+        &nbsp;&nbsp;i=$(( $i + 1))<br>
+        done<br>
+        echo “Done counting”
+      </p>
+    </section>
+  </main>
+</body>
+</html>
