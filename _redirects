@@ -1,2 +1,4 @@
 /clock/* https://garbagemancer-clock.netlify.app/:splat 200!
 /clock https://garbagemancer-clock.netlify.app/:splat 200!
+
+/weather/merlin/* https://pollardweather.com/ 310
