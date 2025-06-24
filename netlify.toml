@@ -1,5 +1,5 @@
 [[redirects]]
 from = "/clock"
 to = "https://garbagemancer-clock.netlify.app/:splat"
-status = 200
+status = 200!
 force = false
