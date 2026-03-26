@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <link rel='icon' href='./images/favicon.ico' />
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta
+      name='description'
+      content='Personal site of Becky Pollard: a Toronto-based programmer with a passion for front-end software development, keeping tech human.'
+    />
+    <meta
+      name='keywords'
+      content='becky pollard, web developer, toronto, front-end web developer, front end web developer, programming, software developer, personal site, resume, available for hire, web designer, web developer in toronto, developer in toronto'
+    />
+    <title>Becky Pollard, Software Developer</title>
+    <style>
+      @font-face {
+  font-family: 'Lordish';
+  src: url(../fonts/lordish-regular-webfont.woff2) format('woff2'),
+    url(./fonts/lordish-regular-webfont.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary: #ff0000;
+  --AnimalCrossingWW: "AnimalCrossingWW", "Open Sans", monospace;
+  --Lordish: "Lordish", "Open Sans", monospace;
+}
+      html {
+        background: #000;
+        background: url(assets/images/textures/ezgif-final.gif) no-repeat center center fixed;
+        background-size: cover;
+        padding: 0px;
+        margin: 0px;
+      }
+      html::after {
+        content: "";
+        background: url(./assets/images/textures/60.png) no-repeat bottom center fixed;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        z-index: -1;
+        transition-property: opacity;
+        transition-duration: 60s;
+        transition-delay: 10s;
+        animation: mymove 300s infinite;
+        animation-delay: 60s;
+        /* filter: invert(); */
+      }
+      @keyframes mymove {
+        0% {opacity: 0;};
+        50% {opacity: 80%;}
+        0% {opacity: 0;};
+      }
+      html::before {
+        content: "";
+        /* background: url(./assets/images/textures/dot.png); */
+        background: rgb(0, 244, 40);
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0.7;
+        z-index: -1;
+        mix-blend-mode: multiply;
+      }
+      body {
+        padding: 0;
+        margin: 0;
+        position: relative;
+      }
+      header {
+        font-family: var(--Lordish);
+        text-align: center;
+      }
+      h1 {
+        font-size: 60px;
+      }
+      main { 
+        background: url(./assets/images/textures/noise.jpg);
+        margin: 0 auto;
+        max-width: 800px;
+        color: rgb(0, 244, 40);
+        padding: 20px;
+      }
+      p {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Becky Pollard</h1>
+    </header>
+    <main>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad provident ipsum porro possimus a! Itaque ea temporibus, praesentium accusantium molestiae, necessitatibus doloribus inventore ipsa suscipit, consequatur quae a eveniet quam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis minima tenetur voluptates, accusamus quia nostrum placeat similique sequi ducimus deserunt. Illo, suscipit eos. Amet, quibusdam. Nisi soluta error natus.</p>
+    </main>
+
+  </body>
+</html>

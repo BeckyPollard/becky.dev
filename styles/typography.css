@@ -11,22 +11,22 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Jacquard12';
+  src: url(../fonts/jacquard12.woff2) format('woff2'),
+    url(../fonts/jacquard12.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 :root {
-  --primary: #ff0000;
-  --AnimalCrossingWW: "AnimalCrossingWW", "Open Sans", monospace;
-    --Lordish: "Lordish", "Open Sans", monospace;
+  --primary: #00f428;
+  --animalCrossingWW: "AnimalCrossingWW", "Open Sans", monospace;
+  --lordish: "Lordish", "Open Sans", monospace;
+  --jacquard: "Jacquard12", "Open Sans", monospace;
 }
 
-html {
-  font-size: 62.5%;
-}
 
-body {
-  font-size: 1.6rem;
-  font-weight: 300;
-  line-height: 1.6;
-}
 
 *::selection, *:focus {
   background: var(--primary);
