@@ -1,10 +1,8 @@
 @import './reset.css';
 @import './typography.css';
 @import './animation.css';
-/* @import './about.css'; */
-/* @import './wedding.css'; */
-/* @import './resume.css'; */
-/* @import './contact.css'; */
+@import './resume.css';
+@import './contact.css';
 
 html {
   background: #000 no-repeat center center fixed;
@@ -28,6 +26,39 @@ html {
   }
 }
 
+#mainNav {
+  position: absolute;
+  top: 0;
+  padding: 10px;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+
+    li:not(:last-of-type) {
+      margin-right: 20px;
+    }
+  }
+
+  a {
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: -1px -1px 0 #000, 1px 1px 0 #000, -1px -1px 10px #000;
+    &:hover {
+      background: url(../assets/images/textures/noise.jpg);
+      animation: 1s infinite anim-static;
+      text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
+      color: var(--primary) !important;
+      text-decoration: none !important;
+    }
+    &:focus {
+      color: #000;
+      box-shadow: 0 5px 20px 0px #000;
+    }
+  }
+}
+
 #intro {
   width: calc(100% - 40px);
   text-align: center;
@@ -44,9 +75,10 @@ html {
     font-family: var(--lordish);
     color: #fff;
     margin-bottom: 20px;
+    text-shadow: -1px 1px 5px #000, 1px 1px 10px #000;
   }
 
-  h2 {
+  h2, a {
     font-size: 25px;
     color: #fff;
     font-family: var(--animalCrossingWW);
@@ -55,7 +87,7 @@ html {
     letter-spacing: 0.4rem;
     text-transform: uppercase;
     line-height: 1;
-    filter: drop-shadow(0px 0px 10px #000)
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, -1px -1px 10px #000;
   }
 }
 
@@ -152,7 +184,6 @@ main {
 }
 
 #links {
-
   div {
     text-align: center;
   }
@@ -160,16 +191,6 @@ main {
   img {
     margin-top: 20px;
   }
-}
-
-/* TYPOGRAPHY */
-a {
-  color: var(--primary);
-  text-decoration: underline dotted var(--primary);
-}
-a:hover {
-  color: #00f !important;
-  text-decoration: underline dotted #00f !important;
 }
 
 /* i love css */
