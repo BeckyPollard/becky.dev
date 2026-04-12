@@ -1,3 +1,52 @@
+@import './reset.css';
+@import './animation.css';
+
+html {
+  background: #000 no-repeat center center fixed;
+  background-image: url(../assets/images/textures/miasma01.gif), url(../assets/images/textures/miasma01.jpg);
+  background-size: cover;
+}
+
+@font-face {
+  font-family:'AnimalCrossingWW';
+  src:url(../fonts/animal-crossing.woff) format("woff2"),url(./fonts/animal-crossing.woff) format("woff");
+  font-weight:normal;
+  font-style:normal;
+}
+@font-face {
+  font-family: 'Lordish';
+  src: url(../fonts/lordish-regular-webfont.woff2) format('woff2'),
+    url(../fonts/lordish-regular-webfont.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary: #00f428;
+  --AnimalCrossingWW: "AnimalCrossingWW", "Open Sans", monospace;
+    --Lordish: "Lordish", "Open Sans", monospace;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+*::selection, *:focus {
+  background: var(--primary);
+  color: #000;
+}
+*:focus:hover {
+  color: #000;
+  -webkit-text-stroke: 1px #000;
+}
+
+
 #resume {
   margin: 0 auto;
   max-width: calc(8.5in);
@@ -24,9 +73,9 @@
   background: #666;
 }
 #resume .sideBtn {
-  color: #bbb;
+  color: var(--primary);
   font-size: 1.2rem;
-  background-color: #333;
+  background-color: #000;
   position: absolute;
   top: 10px;
   left: 10px;
@@ -92,6 +141,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   background: #fff;
+  box-shadow: 0 5px 30px 0 #000;
 }
 @media only screen and (min-width: 816px) {
   #resume main {
