@@ -7,6 +7,7 @@ html {
   background: #000 no-repeat center center fixed;
   background-image: url(../assets/images/textures/miasma01.gif), url(../assets/images/textures/miasma01.jpg);
   background-size: cover;
+  scroll-behavior: smooth;
 
   &::after {
     /* cloud top */
@@ -29,14 +30,18 @@ html {
   position: absolute;
   top: 0;
   padding: 10px;
+  max-width: 100%;
 
   ul {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-around;
+  }
 
-    li:not(:last-of-type) {
-      margin-right: 20px;
-    }
+  li {
+    margin-bottom: 10px;
   }
 
   a {
@@ -98,6 +103,7 @@ main {
   animation: 1s infinite anim-static;
   box-shadow: 0 5px 30px 20px #000;
   color: #fff;
+  position: relative;
 
   section {
     &:not(:last-of-type) {
@@ -190,6 +196,26 @@ main {
   img {
     margin-top: 20px;
   }
+}
+
+.bonus {
+  position: absolute;
+  z-index: -5;
+}
+.sword {
+  left: -30%;
+  top: 90%;
+  transform: scale(1.5);
+}
+.bones {
+  right: -30%;
+  top: 60%;
+  transform: scale(1.5) rotate(25deg);
+}
+.bat {
+  left: -40%;
+  top: 15%;
+  transform: scale(1.5) rotate(-25deg);
 }
 
 /* i love css */
