@@ -26,6 +26,10 @@ html {
   }
 }
 
+body {
+  overflow-x: hidden;
+}
+
 #mainNav {
   position: absolute;
   top: 0;
@@ -97,7 +101,7 @@ html {
 
 main {
   margin: 0 auto;
-  padding: 40px;
+  padding: 40px 40px 100px 40px;
   max-width: calc(800px - 80px);
   background: url(../assets/images/textures/noise.jpg);
   animation: 1s infinite anim-static;
