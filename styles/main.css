@@ -224,6 +224,10 @@ main {
     text-align: center;
   }
 
+  p {
+    padding-top: 20px;
+  }
+
   img {
     margin-top: 20px;
     width: 100%;
