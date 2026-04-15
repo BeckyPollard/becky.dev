@@ -1,12 +1,6 @@
 @import './reset.css';
 @import './animation.css';
 
-html {
-  background: #000 no-repeat center center fixed;
-  background-image: url(../assets/images/textures/miasma01.gif), url(../assets/images/textures/miasma01.jpg);
-  background-size: cover;
-}
-
 @font-face {
   font-family:'AnimalCrossingWW';
   src:url(../fonts/animal-crossing.woff) format("woff2"),url(./fonts/animal-crossing.woff) format("woff");
@@ -20,15 +14,32 @@ html {
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Jacquard12';
+  src: url(../fonts/jacquard12.woff2) format('woff2'),
+    url(../fonts/jacquard12.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary: #00f428;
+  --animalCrossingWW: "AnimalCrossingWW", "Open Sans", monospace;
+  --lordish: "Lordish", "Open Sans", monospace;
+  --jacquard: "Jacquard12", "Open Sans", monospace;
+}
+
+html {
+  background: #000 no-repeat center center fixed;
+  background-image: url(../assets/images/textures/miasma01.gif), url(../assets/images/textures/miasma01.jpg);
+  background-size: cover;
+  font-size: 62.5%;
+}
 
 :root {
   --primary: #00f428;
   --AnimalCrossingWW: "AnimalCrossingWW", "Open Sans", monospace;
     --Lordish: "Lordish", "Open Sans", monospace;
-}
-
-html {
-  font-size: 62.5%;
 }
 
 body {
@@ -45,7 +56,6 @@ body {
   color: #000;
   -webkit-text-stroke: 1px #000;
 }
-
 
 #resume {
   margin: 0 auto;
@@ -68,9 +78,55 @@ body {
   }
 }
 
+#mainNav {
+  position: absolute;
+  top: 20px;
+  padding: 10px;
+  width: 100%;
+  max-width: calc(8.5in);
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-around;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  a {
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    font-family: var(--animalCrossingWW);
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 0.4rem;
+    text-transform: uppercase;
+    line-height: 1;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, -1px -1px 10px #000;
+    
+    &:hover, &.active {
+      background: url(../assets/images/textures/noise.jpg);
+      animation: 1s infinite anim-static;
+      text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
+      color: var(--primary) !important;
+      text-decoration: none !important;
+    }
+    &:focus {
+      color: #000;
+      box-shadow: 0 5px 20px 0px #000;
+    }
+  }
+}
+
 #resume {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-  background: #666;
 }
 #resume .sideBtn {
   color: var(--primary);
@@ -142,6 +198,8 @@ body {
   flex-wrap: wrap;
   background: #fff;
   box-shadow: 0 5px 30px 0 #000;
+  margin-top: 120px;
+  margin-bottom: 50px;
 }
 @media only screen and (min-width: 816px) {
   #resume main {
